@@ -11802,11 +11802,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lehne\\OneDrive\\Desktop\\Schule\\Schule\\4.Klasse\\Programmieren\\Ajax\\CreateMvcCoreProject\\CreateMvcCoreProject\\lagerhaus\\lagerhaus\\lagerhaus.csproj",
+      "projectUniqueName": "C:\\Users\\Lehne\\Source\\Repos\\Frontend\\lagerhaus\\lagerhaus\\lagerhaus.csproj",
       "projectName": "lagerhaus",
-      "projectPath": "C:\\Users\\Lehne\\OneDrive\\Desktop\\Schule\\Schule\\4.Klasse\\Programmieren\\Ajax\\CreateMvcCoreProject\\CreateMvcCoreProject\\lagerhaus\\lagerhaus\\lagerhaus.csproj",
+      "projectPath": "C:\\Users\\Lehne\\Source\\Repos\\Frontend\\lagerhaus\\lagerhaus\\lagerhaus.csproj",
       "packagesPath": "C:\\Users\\Lehne\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lehne\\OneDrive\\Desktop\\Schule\\Schule\\4.Klasse\\Programmieren\\Ajax\\CreateMvcCoreProject\\CreateMvcCoreProject\\lagerhaus\\lagerhaus\\obj\\",
+      "outputPath": "C:\\Users\\Lehne\\Source\\Repos\\Frontend\\lagerhaus\\lagerhaus\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
