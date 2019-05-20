@@ -1,4 +1,21 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿$(document).ready(_ => {
 
-// Write your JavaScript code.
+})
+
+function addBachClicked() {
+    $.post(url, {
+        fruit_name: inputFruitName, month: inputMonth, amount: inputAmount, storage_date: inputStorageData, region: inputRegion, ripeness: inputRipeness
+    }, function (result, status) {
+        const element = document.getElementById('txtStatus');
+        element.value = 'Successfull';
+        element.backgroundColor = 'red';
+    });
+    return null;
+}
+
+fruit_name
+month
+amount
+storage_date
+region
+ripeness
