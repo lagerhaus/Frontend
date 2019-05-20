@@ -2,4 +2,80 @@
     ViewData["Title"] = "Home Page";
 }
 
-<h1>Test for Fronted</h1>
+<style>
+    h1 {
+        background-color: #009036;
+        color: #ffed00;
+        padding-left: 10px;
+    }
+    
+</style>
+<font face="Calibri">
+
+    <h1>Tabellenname</h1>
+
+    <table style="width:100%" border="1">
+        <tr id="columnNames">
+            <th>fruitname</th>
+            <th>month</th>
+            <th>amount</th>
+            <th>storage_date</th>
+            <th>region</th>
+            <th>ripiness</th>
+        </tr>
+        <tr>
+            <td>Ananas</td>
+            <td>3</td>
+            <td>50</td>
+            <td>123</td>
+            <td>Grieskirchen</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>Apple</td>
+            <td>3</td>
+            <td>50</td>
+            <td>123</td>
+            <td>Grieskirchen</td>
+            <td>1</td>
+        </tr>
+    </table> <br />
+
+    <hr />
+
+
+    <h2>Add new Branch:</h2>
+    <table style="width:25%" >
+        <tr>
+            <td>fruit_name:</td>
+            <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <td>month:</td>
+            <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <td>amount:</td>
+            <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <td>storage_date:</td>
+            <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <td>region:</td>
+            <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <td>ripeness:</td>
+            <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <td><button id="addBatch" onclick="addBatchClicked">Add Batch</button></td>
+            <td id="txtStatus"></td>
+        </tr>
+    </table>
+    
+
+
+</font>
