@@ -1,13 +1,21 @@
-﻿$(document).ready(x => {
-    console.log('JQuery ready');
-    const url = 'https://f46acc4f-9fc6-448d-addb-84cee3ec619b.mock.pstmn.io';
+﻿$(document).ready(_ => {
 
-    $.getJSON(url + '/batches/Apple/2019/6').then(data => {
-        console.log(data);
-        if (data.length === 0) {
-            console.log('Request is empty');
-        }
-    })
 })
 
+function addBachClicked() {
+    $.post(url, {
+        fruit_name: inputFruitName, month: inputMonth, amount: inputAmount, storage_date: inputStorageData, region: inputRegion, ripeness: inputRipeness
+    }, function (result, status) {
+        const element = document.getElementById('txtStatus');
+        element.value = 'Successfull';
+        element.backgroundColor = 'red';
+    });
+    return null;
+}
 
+fruit_name
+month
+amount
+storage_date
+region
+ripeness
