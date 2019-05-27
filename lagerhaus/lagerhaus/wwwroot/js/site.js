@@ -10,12 +10,12 @@
             let tr = $('<tr>');
             $('#tblBatches').append(tr);
 
-            $('<th>').html(data[i].fruit_name).appendTo(tr);
-            $('<th>').html(data[i].month).appendTo(tr);
-            $('<th>').html(data[i].amount).appendTo(tr);
-            $('<th>').html(data[i].storage_date).appendTo(tr);
-            $('<th>').html(data[i].region).appendTo(tr);
-            $('<th>').html(data[i].ripeness).appendTo(tr);
+            $('<td>').html(data[i].fruit_name).appendTo(tr);
+            $('<td>').html(data[i].month).appendTo(tr);
+            $('<td>').html(data[i].amount).appendTo(tr);
+            $('<td>').html(data[i].storage_date).appendTo(tr);
+            $('<td>').html(data[i].region).appendTo(tr);
+            $('<td>').html(data[i].ripeness).appendTo(tr);
         }
     });
 
@@ -34,6 +34,7 @@
         }, function (result, status) {
             const element = document.getElementById('txtStatus');
             element.value = status;
+            console.log(inputAmount);
             element.backgroundColor = 'red';
         });
         console.log(inputAmount);
