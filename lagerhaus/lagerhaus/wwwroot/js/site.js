@@ -182,12 +182,12 @@
     
             
     function addBatchClicked(url) {
-        const inputFruitName = document.getElementById('txtFruitName').value;
+        const inputFruitName = document.getElementById('selectFruitName').value;
         const inputYear = document.getElementById('txtYear').value;
         const inputMonth = document.getElementById('txtMonth').value;
         const inputAmount = document.getElementById('txtAmount').value;
         const inputStorageDate = document.getElementById('txtStorageDate').value;
-        const inputRegion = document.getElementById('txtRegion').value;
+        const inputRegion = document.getElementById('selectRegion').value;
         const inputRipeness = document.getElementById('txtRipeness').value;
         console.log(inputRegion);
         $.post(url, {
@@ -195,7 +195,7 @@
         }, function (result, status) {
             const element = document.getElementById('txtStatus');
             element.value = status;
-            console.log(inputYear);
+            console.log(inputFruitName);
             element.backgroundColor = 'red';
         });
         console.log(inputAmount);
