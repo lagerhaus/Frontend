@@ -23,6 +23,47 @@
                 <th>ripiness</th>
             </tr>
         </table>
+
+        <h4>Add new Batch:</h4>
+        <table style="width:45%">
+            <tr>
+                <td>fruit name:</td>
+                <td>
+                    <select id="selectFruitName"></select>
+                </td>
+            </tr>
+            <tr>
+                <td>year:</td>
+                <td><input type="number" id="txtYear"></td>
+            </tr>
+            <tr>
+                <td>month:</td>
+                <td><input type="number" id="txtMonth"></td>
+            </tr>
+            <tr>
+                <td>amount:</td>
+                <td><input type="number" id="txtAmount"></td>
+            </tr>
+            <tr>
+                <td>storage date:</td>
+                <td><input type="text" id="txtStorageDate" placeholder="31.01.2019"></td>
+            </tr>
+            <tr>
+                <td>region:</td>
+                <td>
+                    <select id="selectRegion"> </select>
+                </td>
+            </tr>
+            <tr>
+                <td>ripeness:</td>
+                <td><input type="text" id="txtRipeness" placeholder="Grade A"></td>
+            </tr>
+            <tr>
+                <td id="txtStatus"></td>
+            </tr>
+        </table>
+        <br />
+        <button id="btnAddBatch" style="width:26%">Add Batch</button>
     </div>
 
     <div id="Fruits" class="tabcontent">
@@ -44,72 +85,5 @@
 
     <hr />
 
-    <div class="tabAdd">
-        <button id="btnBatchesAddTab">Batches</button>
-        <button id="btnFruitsAddTab">Fruits</button>
-        <button id="btnRegionsAddTab">Regions</button>
-        <button id="btnWeatherAddTab">Weather</button>
-    </div>
-
-    <div id="BatchesAdd" class="tabcontentAdd">
-        <h3>Batches</h3>
-        <p>London is the capital city of England.</p>
-    </div>
-
-    <div id="FruitsAdd" class="tabcontentAdd">
-        <h3>Fruits</h3>
-        <p>Paris is the capital of France.</p>
-    </div>
-
-    <div id="RegionsAdd" class="tabcontentAdd">
-        <h3>Regions</h3>
-        <p>Tokyo is the capital of Japan.</p>
-    </div>
-    <div id="WeatherAdd" class="tabcontentAdd">
-        <h3>Regions</h3>
-        <p>Tokyo is the capital of Japan.</p>
-    </div>
-
-
-
-    <h4>Add new Batch:</h4>
-    <table style="width:45%">
-        <tr>
-            <td>fruit name:</td>
-            <td>
-                <select id="selectFruitName"></select>
-            </td>
-        </tr>
-        <tr>
-            <td>year:</td>
-            <td><input type="number" id="txtYear"></td>
-        </tr>
-        <tr>
-            <td>month:</td>
-            <td><input type="number" id="txtMonth"></td>
-        </tr>
-        <tr>
-            <td>amount:</td>
-            <td><input type="number" id="txtAmount"></td>
-        </tr>
-        <tr>
-            <td>storage date:</td>
-            <td><input type="text" id="txtStorageDate" placeholder="31.01.2019"></td>
-        </tr>
-        <tr>
-            <td>region:</td>
-            <td>
-                <select id="selectRegion"> </select>
-            </td>
-        </tr>
-        <tr>
-            <td>ripeness:</td>
-            <td><input type="text" id="txtRipeness" placeholder="Grade A"></td>
-        </tr>
-        <tr>
-            <td id="txtStatus"></td>
-        </tr>
-    </table>
-    <br />
-    <button id="btnAddBatch" style="width:26%">Add Batch</button>
+    
 </div>
