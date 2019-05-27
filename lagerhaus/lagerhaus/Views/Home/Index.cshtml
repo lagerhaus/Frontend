@@ -1,36 +1,56 @@
-﻿<style>
-    h1 {
-        background-color: #009036;
-        color: #ffed00;
-        font-family:'Segoe UI';
-        font-weight: bold; 
-    }
-</style>
+﻿
 <font face="Calibri">
+<header>
     <h1>BATCHES</h1>
+</header>
 
     <table style="width:100%" id="tblBatches">
         <tr id="columnNames" style="border-bottom:solid; border-color:#009036">
             <th>fruitname</th>
+            <th>year</th>
             <th>month</th>
             <th>amount</th>
             <th>storage_date</th>
             <th>region</th>
             <th>ripiness</th>
         </tr>
+        <tr>
+            <td>Ananas</td>
+            <td>6</td>
+            <td>3</td>
+            <td>50</td>
+            <td>123</td>
+            <td>Grieskirchen</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>Apple</td>
+            <td>6</td>
+            <td>3</td>
+            <td>50</td>
+            <td>123</td>
+            <td>Grieskirchen</td>
+            <td>1</td>
+        </tr>
+
+
     </table> <br />
 
     <hr />
 
 
-    <h4>Add new Branch:</h4>
-    <table style="width:25%">
+    <h4>Add new Batch:</h4>
+    <table style="width:36%">
         <tr>
             <td>fruit_name:</td>
             @*<td><input type="text" id="txtFruitName"></td>*@
             <td>
                 <select id="selectFruitName"></select>
             </td>
+        </tr>
+        <tr>
+            <td>year:</td>
+            <td><input type="text" id="txtYear"></td>
         </tr>
         <tr>
             <td>month:</td>
@@ -63,7 +83,7 @@
     <br />
     <button id="btnAddBatch" style="width:26%">Add Batch</button>
 
-    
+
 
 
 </font>

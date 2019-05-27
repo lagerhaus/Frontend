@@ -35,3 +35,14 @@ body {
         display: none;
     }
 }
+/*------------------------------------------------------------*/
+
+header {
+    background-color: #009036;
+}
+h1 {
+    color: #ffed00;
+    font-family: 'Segoe UI';
+    font-weight: bold;
+}
+

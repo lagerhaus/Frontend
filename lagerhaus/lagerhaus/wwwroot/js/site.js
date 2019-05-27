@@ -60,6 +60,7 @@
         }, function (result, status) {
             const element = document.getElementById('txtStatus');
             element.value = status;
+            console.log(inputAmount);
             element.backgroundColor = 'red';
         });
         console.log(inputAmount);
