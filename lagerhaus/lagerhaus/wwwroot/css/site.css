@@ -62,12 +62,12 @@ html {
     overflow: hidden; 
 }
 
-
-
-
-
-
-
+#txtWeatherYear{
+    margin-right: 20px;
+}
+#txtWeatherMonth {
+    margin-right: 20px;
+}
 /* Style the Show tab */
 .tab {
     overflow: hidden;
@@ -94,39 +94,6 @@ html {
         }
 
 .tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
-    animation: fadeEffect 1s;
-}
-/*Style For Adding Tab*/
-.tabAdd {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
-}
-
-    .tabAdd button {
-        background-color: inherit;
-        float: left;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        padding: 14px 16px;
-        transition: 0.3s;
-    }
-
-        .tabAdd button:hover {
-            background-color: #ddd;
-        }
-
-        .tabAdd button.active {
-            background-color: #ccc;
-        }
-
-/* Style the tab content */
-.tabcontentAdd {
     display: none;
     padding: 6px 12px;
     border: 1px solid #ccc;

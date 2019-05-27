@@ -2,14 +2,24 @@
     const url = 'https://f46acc4f-9fc6-448d-addb-84cee3ec619b.mock.pstmn.io';
     
     $('#btnAddBatch').on('click', event => addBatchClicked(url + '/batches'));
-    updateBatchesTable();
+    $('#btnWeatherLoad').on('click', event => loadWeather());
+    
+    
+
+    updateTables();
     updateSelects();
     initializeTabButtons();
+
+    function updateTables() {
+        updateBatchesTable();
+        updateFruitsTable();
+        updateRegionsTable();
+    }
 
     function updateBatchesTable() {
         $.getJSON(url + '/batches').then(data => {
 
-            console.log('-----fill table with data-----');
+            console.log('-----fill batches table with data-----');
             console.log(JSON.stringify(data));
 
             for (var i in data) {
@@ -26,6 +36,83 @@
             }
         });
     }
+    function updateFruitsTable() {
+        $.getJSON(url + '/fruit').then(data => {
+
+            console.log('-----fill fruits table with data-----');
+            console.log(JSON.stringify(data));
+
+            for (var i in data) {
+                let tr = $('<tr>');
+                $('#tblFruits').append(tr);
+
+                $('<td>').html(data[i].name).appendTo(tr);
+                $('<td>').html(data[i].ripeness_grades[0].name).appendTo(tr);
+                $('<td>').html(data[i].ripeness_grades[0].minimum_storage_span).appendTo(tr);
+            }
+        });
+    }
+    function updateRegionsTable() {
+        $.getJSON(url + '/regions').then(data => {
+
+            console.log('-----fill regions table with data-----');
+            console.log(JSON.stringify(data));
+
+            for (var i in data) {
+                let tr = $('<tr>');
+                $('#tblRegions').append(tr);
+
+                $('<td>').html(data[i].name).appendTo(tr);
+                $('<td>').html(data[i].area).appendTo(tr);
+                $('<td>').html(data[i].level).appendTo(tr);
+            }
+        });
+    }
+
+    function loadWeather() {
+        
+        const year = $('#txtWeatherYear').val();
+        const month = $('#txtWeatherMonth').val();
+        console.log(`-----loadWeather (year: ${year},month: ${month}) -----`);
+
+        const urlToSend = `${url}/weather/${year}/${month}`;
+        console.log(urlToSend);
+        $.getJSON(`${url}/weather/${year}/${month}`).then(data => {
+            console.log(`-----fill weather table with data (year: ${year},month: ${month})-----`);
+            console.log(JSON.stringify(data));
+
+            for (var i in data) {
+                let tr = $('<tr>');
+                $('#tblWeather').append(tr);
+
+                $('<td>').html(data[i].year).appendTo(tr);
+                $('<td>').html(data[i].month).appendTo(tr);
+                $('<td>').html(data[i].region).appendTo(tr);
+                $('<td>').html(data[i].rainy_days).appendTo(tr);
+                $('<td>').html(data[i].sunny_days).appendTo(tr);
+            }
+        });
+    }
+    function updateWeatherTable() {
+        $.getJSON(url + '/weather').then(data => {
+
+            console.log('-----fill regions table with data-----');
+            console.log(JSON.stringify(data));
+
+            for (var i in data) {
+                let tr = $('<tr>');
+                $('#tblWeather').append(tr);
+
+                $('<td>').html(data[i].year).appendTo(tr);
+                $('<td>').html(data[i].month).appendTo(tr);
+                $('<td>').html(data[i].region).appendTo(tr);
+                $('<td>').html(data[i].level).appendTo(tr);
+                $('<td>').html(data[i].level).appendTo(tr);
+            }
+        });
+    }
+
+
 
     function updateSelects() {
         console.log('-----fillSelects-----')

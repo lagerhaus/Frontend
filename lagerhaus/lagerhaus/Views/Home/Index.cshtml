@@ -1,9 +1,10 @@
 ﻿
-<font face="Calibri">
-    <div id="header">
-        LAGERHAUS
-    </div>
+<div id="header">
+    LAGERHAUS
+</div>
 
+
+<div id="body">
     <div class="tab">
         <button id="btnBatches">Batches</button>
         <button id="btnFruits">Fruits</button>
@@ -27,66 +28,58 @@
     </div>
 
     <div id="Fruits" class="tabcontent">
-        <h3>Fruits</h3>
-        <p>Paris is the capital of France.</p>
+        <table style="width:100%" id="tblFruits">
+            <tr id="columnNames" style="border-bottom:solid; border-color:#009036">
+                <th>Fruitname</th>
+                <th>Ripeness Grade</th>
+                <th>Minimum Storage Span</th>
+            </tr>
+        </table>
     </div>
 
     <div id="Regions" class="tabcontent">
-        <h3>Regions</h3>
-        <p>Tokyo is the capital of Japan.</p>
+        <table style="width:100%" id="tblRegions">
+            <tr id="columnNames" style="border-bottom:solid; border-color:#009036">
+                <th>Name</th>
+                <th>Area</th>
+                <th>Level</th>
+            </tr>
+        </table>
     </div>
 
     <div id="Weather" class="tabcontent">
-        <h3>Weather</h3>
-        <p>Tokyo is the capital of Japan.</p>
+
+        <table>
+            <tr>
+                <td>
+                    Year:
+                    <input type="number" id="txtWeatherYear" placeholder="2019" />
+                </td>
+                <td>
+                    Month:
+                    <input type="number" id="txtWeatherMonth" placeholder="6"/>
+                </td>
+                <td>
+                    <button id="btnWeatherLoad">Load Weather</button>
+                </td>
+            </tr>
+        </table>
+
+
+        <table style="width:100%" id="tblWeather">
+            <tr id="columnNames" style="border-bottom:solid; border-color:#009036">
+                <th>Year</th>
+                <th>Month</th>
+                <th>Region</th>
+                <th>Rainy Days</th>
+                <th>Sunny Days</th>
+            </tr>
+        </table>
     </div>
 
 
-
-
-     <br />
-
-        <hr />
-
-    @*Start for Adding things*@
-
-
-    <div class="tabAdd">
-        <button id="btnBatchesAddTab">Batches</button>
-        <button id="btnFruitsAddTab">Fruits</button>
-        <button id="btnRegionsAddTab">Regions</button>
-        <button id="btnWeatherAddTab">Weather</button>
-    </div>
-
-    <!-- Tab content -->
-    <div id="BatchesAdd" class="tabcontentAdd">
-        <h3>Batches</h3>
-        <p>London is the capital city of England.</p>
-    </div>
-
-    <div id="FruitsAdd" class="tabcontentAdd">
-        <h3>Fruits</h3>
-        <p>Paris is the capital of France.</p>
-    </div>
-
-    <div id="RegionsAdd" class="tabcontentAdd">
-        <h3>Regions</h3>
-        <p>Tokyo is the capital of Japan.</p>
-    </div>
-    <div id="WeatherAdd" class="tabcontentAdd">
-        <h3>Regions</h3>
-        <p>Tokyo is the capital of Japan.</p>
-    </div>
-
-
-
-
-
-
-
-
-
-
+    <br />
+    <hr />
 
     <h4>Add new Batch:</h4>
     <table style="width:36%">
@@ -136,6 +129,4 @@
     <!-- Tab links -->
 
 
-
-
-</font>
+</div>
