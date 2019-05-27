@@ -11796,23 +11796,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {},
+    "C:\\Users\\Lehne\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Source\\Repos\\lagerhaus\\Frontend\\lagerhaus\\lagerhaus\\lagerhaus.csproj",
+      "projectUniqueName": "C:\\Users\\Lehne\\Source\\Repos\\Frontend\\lagerhaus\\lagerhaus\\lagerhaus.csproj",
       "projectName": "lagerhaus",
-      "projectPath": "C:\\Users\\user\\Source\\Repos\\lagerhaus\\Frontend\\lagerhaus\\lagerhaus\\lagerhaus.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Source\\Repos\\lagerhaus\\Frontend\\lagerhaus\\lagerhaus\\obj\\",
+      "projectPath": "C:\\Users\\Lehne\\Source\\Repos\\Frontend\\lagerhaus\\lagerhaus\\lagerhaus.csproj",
+      "packagesPath": "C:\\Users\\Lehne\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Lehne\\Source\\Repos\\Frontend\\lagerhaus\\lagerhaus\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Lehne\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
