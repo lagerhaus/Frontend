@@ -26,7 +26,7 @@
             }
         });
     }
-
+    //kladsklfjklajdflfkfajkldfjkljfklöjdkfljlkfa
     function updateSelects() {
         console.log('-----fillSelects-----')
         fillSelect('/regions', 'selectRegion');

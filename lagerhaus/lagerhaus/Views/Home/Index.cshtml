@@ -1,9 +1,8 @@
-﻿
-<font face="Calibri">
-    <div id="header">
-        LAGERHAUS
-    </div>
+﻿<div id="header">
+    LAGERHAUS
+</div>
 
+<div id="body">
     <div class="tab">
         <button id="btnBatches">Batches</button>
         <button id="btnFruits">Fruits</button>
@@ -41,15 +40,9 @@
         <p>Tokyo is the capital of Japan.</p>
     </div>
 
+    <br />
 
-
-
-     <br />
-
-        <hr />
-
-    @*Start for Adding things*@
-
+    <hr />
 
     <div class="tabAdd">
         <button id="btnBatchesAddTab">Batches</button>
@@ -58,7 +51,6 @@
         <button id="btnWeatherAddTab">Weather</button>
     </div>
 
-    <!-- Tab content -->
     <div id="BatchesAdd" class="tabcontentAdd">
         <h3>Batches</h3>
         <p>London is the capital city of England.</p>
@@ -80,62 +72,44 @@
 
 
 
-
-
-
-
-
-
-
-
     <h4>Add new Batch:</h4>
-    <table style="width:36%">
+    <table style="width:45%">
         <tr>
-            <td>fruit_name:</td>
-            @*<td><input type="text" id="txtFruitName"></td>*@
+            <td>fruit name:</td>
             <td>
                 <select id="selectFruitName"></select>
             </td>
         </tr>
         <tr>
             <td>year:</td>
-            <td><input type="text" id="txtYear"></td>
+            <td><input type="number" id="txtYear"></td>
         </tr>
         <tr>
             <td>month:</td>
-            <td><input type="text" id="txtMonth"></td>
+            <td><input type="number" id="txtMonth"></td>
         </tr>
         <tr>
             <td>amount:</td>
-            <td><input type="text" id="txtAmount"></td>
+            <td><input type="number" id="txtAmount"></td>
         </tr>
         <tr>
-            <td>storage_date:</td>
-            <td><input type="text" id="txtStorageDate"></td>
+            <td>storage date:</td>
+            <td><input type="text" id="txtStorageDate" placeholder="31.01.2019"></td>
         </tr>
         <tr>
             <td>region:</td>
-            @*<td><input type="text" id="txtRegion"></td>*@
             <td>
                 <select id="selectRegion"> </select>
             </td>
         </tr>
         <tr>
             <td>ripeness:</td>
-            <td><input type="text" id="txtRipeness"></td>
+            <td><input type="text" id="txtRipeness" placeholder="Grade A"></td>
         </tr>
         <tr>
-            @*<td><button id="btnAddBatch"> Add Batch</button></td>*@
             <td id="txtStatus"></td>
         </tr>
     </table>
     <br />
     <button id="btnAddBatch" style="width:26%">Add Batch</button>
-
-
-    <!-- Tab links -->
-
-
-
-
-</font>
+</div>
