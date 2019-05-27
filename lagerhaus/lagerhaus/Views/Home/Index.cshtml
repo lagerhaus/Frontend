@@ -1,4 +1,4 @@
-<div id="header">
+﻿<div id="header">
     LAGERHAUS
 </div>
 
@@ -23,6 +23,47 @@
                 <th>ripiness</th>
             </tr>
         </table>
+
+        <h4>Add new Batch:</h4>
+        <table style="width:45%">
+            <tr>
+                <td>fruit name:</td>
+                <td>
+                    <select id="selectFruitName"></select>
+                </td>
+            </tr>
+            <tr>
+                <td>year:</td>
+                <td><input type="number" id="txtYear"></td>
+            </tr>
+            <tr>
+                <td>month:</td>
+                <td><input type="number" id="txtMonth"></td>
+            </tr>
+            <tr>
+                <td>amount:</td>
+                <td><input type="number" id="txtAmount"></td>
+            </tr>
+            <tr>
+                <td>storage date:</td>
+                <td><input type="text" id="txtStorageDate" placeholder="31.01.2019"></td>
+            </tr>
+            <tr>
+                <td>region:</td>
+                <td>
+                    <select id="selectRegion"> </select>
+                </td>
+            </tr>
+            <tr>
+                <td>ripeness:</td>
+                <td><input type="text" id="txtRipeness" placeholder="Grade A"></td>
+            </tr>
+            <tr>
+                <td id="txtStatus"></td>
+            </tr>
+        </table>
+        <br />
+        <button id="btnAddBatch" style="width:26%">Add Batch</button>
     </div>
 
     <div id="Fruits" class="tabcontent">
@@ -44,55 +85,5 @@
 
     <hr />
 
-    @*Start for Adding things*@
-
-
     
-
-
-
-    <h4>Add new Batch:</h4>
-    <table style="width:45%">
-        <tr>
-            <td>fruit name:</td>
-            <td>
-                <select id="selectFruitName"></select>
-            </td>
-        </tr>
-        <tr>
-            <td>year:</td>
-            <td><input type="number" id="txtYear"></td>
-        </tr>
-        <tr>
-            <td>month:</td>
-            <td><input type="number" id="txtMonth"></td>
-        </tr>
-        <tr>
-            <td>amount:</td>
-            <td><input type="number" id="txtAmount"></td>
-        </tr>
-        <tr>
-            <td>storage date:</td>
-            <td><input type="text" id="txtStorageDate" placeholder="31.01.2019"></td>
-        </tr>
-        <tr>
-            <td>region:</td>
-            <td>
-                <select id="selectRegion"> </select>
-            </td>
-        </tr>
-        <tr>
-            <td>Ripeness:</td>
-            <td><input type="text" id="txtRipeness"></td>
-        </tr>
-        <tr>
-            <td>ripeness:</td>
-            <td><input type="text" id="txtRipeness" placeholder="Grade A"></td>
-        </tr>
-        <tr>
-            <td id="txtStatus"></td>
-        </tr>
-    </table>
-    <br />
-    <button id="btnAddBatch" style="width:26%">Add Batch</button>
 </div>
