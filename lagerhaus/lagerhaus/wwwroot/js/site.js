@@ -1,12 +1,11 @@
 ﻿$(document).ready(_ => {
     const url = 'https://f46acc4f-9fc6-448d-addb-84cee3ec619b.mock.pstmn.io';
-
-    $('#btnAddBatch').on('click', event => addBatchClicked(url));
+    
+    $('#btnAddBatch').on('click', event => addBatchClicked(url + '/batches'));
     updateBatchesTable();
     updateSelects();
 
-    function updateBatchesTable()
-    {
+    function updateBatchesTable() {
         $.getJSON(url + '/batches').then(data => {
 
             console.log('-----fill table with data-----');
@@ -25,6 +24,7 @@
             }
         });
     }
+
     function updateSelects() {
         console.log('-----fillSelects-----')
         fillSelect('/regions', 'selectRegion');
@@ -42,11 +42,6 @@
         });
     }
 
-    
-
-
-    
-            
     function addBatchClicked(url) {
         const inputFruitName = document.getElementById('txtFruitName').value;
         const inputYear = document.getElementById('txtYear').value;
