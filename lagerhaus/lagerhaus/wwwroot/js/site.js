@@ -1,13 +1,12 @@
 ﻿$(document).ready(_ => {
     const url = 'https://f46acc4f-9fc6-448d-addb-84cee3ec619b.mock.pstmn.io';
-
-    $('#btnAddBatch').on('click', event => addBatchClicked(url));
+    
+    $('#btnAddBatch').on('click', event => addBatchClicked(url + '/batches'));
     updateBatchesTable();
     updateSelects();
     initializeTabButtons();
 
-    function updateBatchesTable()
-    {
+    function updateBatchesTable() {
         $.getJSON(url + '/batches').then(data => {
 
             console.log('-----fill table with data-----');
@@ -27,6 +26,7 @@
             }
         });
     }
+
     function updateSelects() {
         console.log('-----fillSelects-----')
         fillSelect('/regions', 'selectRegion');
@@ -96,6 +96,7 @@
             
     function addBatchClicked(url) {
         const inputFruitName = document.getElementById('txtFruitName').value;
+        const inputYear = document.getElementById('txtYear').value;
         const inputMonth = document.getElementById('txtMonth').value;
         const inputAmount = document.getElementById('txtAmount').value;
         const inputStorageDate = document.getElementById('txtStorageDate').value;
@@ -103,11 +104,11 @@
         const inputRipeness = document.getElementById('txtRipeness').value;
         console.log(inputRegion);
         $.post(url, {
-            fruit_name: inputFruitName, month: inputMonth, amount: inputAmount, storage_date: inputStorageDate, region: inputRegion, ripeness: inputRipeness
+            fruit_name: inputFruitName, year: inputYear, month: inputMonth, amount: inputAmount, storage_date: inputStorageDate, region: inputRegion, ripeness: inputRipeness
         }, function (result, status) {
             const element = document.getElementById('txtStatus');
             element.value = status;
-            console.log(inputAmount);
+            console.log(inputYear);
             element.backgroundColor = 'red';
         });
         console.log(inputAmount);
