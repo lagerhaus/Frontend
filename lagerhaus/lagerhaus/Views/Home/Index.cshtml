@@ -1,7 +1,18 @@
-﻿    <div id="header">
+﻿
+<font face="Calibri">
+    <div id="header">
         LAGERHAUS
     </div>
-    <div id="body">
+
+    <div class="tab">
+        <button id="btnBatches">Batches</button>
+        <button id="btnFruits">Fruits</button>
+        <button id="btnRegions">Regions</button>
+        <button id="btnWeather">Weather</button>
+    </div>
+
+    <!-- Tab content -->
+    <div id="Batches" class="tabcontent">
         <table style="width:100%" id="tblBatches">
             <tr id="columnNames" style="border-bottom:solid; border-color:#009036">
                 <th>fruitname</th>
@@ -12,70 +23,119 @@
                 <th>region</th>
                 <th>ripiness</th>
             </tr>
-        </table> <br />
+        </table>
+    </div>
+
+    <div id="Fruits" class="tabcontent">
+        <h3>Fruits</h3>
+        <p>Paris is the capital of France.</p>
+    </div>
+
+    <div id="Regions" class="tabcontent">
+        <h3>Regions</h3>
+        <p>Tokyo is the capital of Japan.</p>
+    </div>
+
+    <div id="Weather" class="tabcontent">
+        <h3>Weather</h3>
+        <p>Tokyo is the capital of Japan.</p>
+    </div>
+
+
+
+
+     <br />
 
         <hr />
 
-    <div class="two-col">
-        <div class="col1">
-            <h4>Add new Batch:</h4>
-            <table style="width:45%">
-                <tr>
-                    <td>fruit name:</td>
-                    <td>
-                        <select id="selectFruitName"></select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>year:</td>
-                    <td><input type="number" id="txtYear"></td>
-                </tr>
-                <tr>
-                    <td>month:</td>
-                    <td><input type="number" id="txtMonth"></td>
-                </tr>
-                <tr>
-                    <td>amount:</td>
-                    <td><input type="number" id="txtAmount"></td>
-                </tr>
-                <tr>
-                    <td>storage date:</td>
-                    <td><input type="text" id="txtStorageDate" placeholder="31.01.2019"></td>
-                </tr>
-                <tr>
-                    <td>region:</td>
-                    <td>
-                        <select id="selectRegion"> </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>ripeness:</td>
-                    <td><input type="text" id="txtRipeness" placeholder="Grade A"></td>
-                </tr>
-                <tr>
-                    <td id="txtStatus"></td>
-                </tr>
-            </table>
-            <br />
-            <button id="btnAddBatch" style="width:26%">Add Batch</button>
-        </div>
-        <div class="col2">
-            <h4>Add new Fruit:</h4>
-            <table style="width:36%">
-                <tr>
-                    <td>fruit name:</td>
-                    <td><input type="text" id="txtFruitName"/></td>
-                </tr>
-                <tr>
-                    <td>ripeness:</td>
-                    <td><input type="text" id="txtRipeness" placeholder="Grade A"/></td>
-                </tr>
-                <tr>
-                    <td id="txtStatus"></td>
-                </tr>
-            </table>
-            <br />
-            <button id="btnAddFruit" style="width:26%">Add Batch</button>
-        </div>
+    @*Start for Adding things*@
+
+
+    <div class="tabAdd">
+        <button id="btnBatchesAddTab">Batches</button>
+        <button id="btnFruitsAddTab">Fruits</button>
+        <button id="btnRegionsAddTab">Regions</button>
+        <button id="btnWeatherAddTab">Weather</button>
     </div>
-</div>
+
+    <!-- Tab content -->
+    <div id="BatchesAdd" class="tabcontentAdd">
+        <h3>Batches</h3>
+        <p>London is the capital city of England.</p>
+    </div>
+
+    <div id="FruitsAdd" class="tabcontentAdd">
+        <h3>Fruits</h3>
+        <p>Paris is the capital of France.</p>
+    </div>
+
+    <div id="RegionsAdd" class="tabcontentAdd">
+        <h3>Regions</h3>
+        <p>Tokyo is the capital of Japan.</p>
+    </div>
+    <div id="WeatherAdd" class="tabcontentAdd">
+        <h3>Regions</h3>
+        <p>Tokyo is the capital of Japan.</p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <h4>Add new Batch:</h4>
+    <table style="width:36%">
+        <tr>
+            <td>fruit_name:</td>
+            @*<td><input type="text" id="txtFruitName"></td>*@
+            <td>
+                <select id="selectFruitName"></select>
+            </td>
+        </tr>
+        <tr>
+            <td>year:</td>
+            <td><input type="text" id="txtYear"></td>
+        </tr>
+        <tr>
+            <td>month:</td>
+            <td><input type="text" id="txtMonth"></td>
+        </tr>
+        <tr>
+            <td>amount:</td>
+            <td><input type="text" id="txtAmount"></td>
+        </tr>
+        <tr>
+            <td>storage_date:</td>
+            <td><input type="text" id="txtStorageDate"></td>
+        </tr>
+        <tr>
+            <td>region:</td>
+            @*<td><input type="text" id="txtRegion"></td>*@
+            <td>
+                <select id="selectRegion"> </select>
+            </td>
+        </tr>
+        <tr>
+            <td>ripeness:</td>
+            <td><input type="text" id="txtRipeness"></td>
+        </tr>
+        <tr>
+            @*<td><button id="btnAddBatch"> Add Batch</button></td>*@
+            <td id="txtStatus"></td>
+        </tr>
+    </table>
+    <br />
+    <button id="btnAddBatch" style="width:26%">Add Batch</button>
+
+
+    <!-- Tab links -->
+
+
+
+
+</font>
