@@ -4,7 +4,7 @@
     <h1>BATCHES</h1>
 </header>
 
-    <table style="width:100%">
+    <table style="width:100%" id="tblBatches">
         <tr id="columnNames" style="border-bottom:solid; border-color:#009036">
             <th>fruitname</th>
             <th>year</th>
@@ -43,7 +43,10 @@
     <table style="width:36%">
         <tr>
             <td>fruit_name:</td>
-            <td><input type="text" id="txtFruitName"></td>
+            @*<td><input type="text" id="txtFruitName"></td>*@
+            <td>
+                <select id="selectFruitName"></select>
+            </td>
         </tr>
         <tr>
             <td>year:</td>
@@ -63,17 +66,22 @@
         </tr>
         <tr>
             <td>region:</td>
-            <td><input type="text" id="txtRegion"></td>
+            @*<td><input type="text" id="txtRegion"></td>*@
+            <td>
+                <select id="selectRegion"> </select>
+            </td>
         </tr>
         <tr>
             <td>ripeness:</td>
             <td><input type="text" id="txtRipeness"></td>
         </tr>
         <tr>
-            <td><button id="btnAddBatch"> Add Batch</button></td>
+            @*<td><button id="btnAddBatch"> Add Batch</button></td>*@
             <td id="txtStatus"></td>
         </tr>
     </table>
+    <br />
+    <button id="btnAddBatch" style="width:26%">Add Batch</button>
 
 
 

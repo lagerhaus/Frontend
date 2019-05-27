@@ -1,25 +1,51 @@
 ﻿$(document).ready(_ => {
     const url = 'https://f46acc4f-9fc6-448d-addb-84cee3ec619b.mock.pstmn.io';
 
-    $.getJSON(url + '/batches').then(data => {
+    $('#btnAddBatch').on('click', event => addBatchClicked(url));
+    updateBatchesTable();
+    updateSelects();
 
-        console.log('fill table with data =>');
-        console.log(data);
+    function updateBatchesTable()
+    {
+        $.getJSON(url + '/batches').then(data => {
 
-        for (var i in data) {
-            let tr = $('<tr>');
-            $('#tblBatches').append(tr);
+            console.log('-----fill table with data-----');
+            console.log(JSON.stringify(data));
 
-            $('<td>').html(data[i].fruit_name).appendTo(tr);
-            $('<td>').html(data[i].month).appendTo(tr);
-            $('<td>').html(data[i].amount).appendTo(tr);
-            $('<td>').html(data[i].storage_date).appendTo(tr);
-            $('<td>').html(data[i].region).appendTo(tr);
-            $('<td>').html(data[i].ripeness).appendTo(tr);
-        }
-    });
+            for (var i in data) {
+                let tr = $('<tr>');
+                $('#tblBatches').append(tr);
 
-    $('#btnAddBatch').on('click', event => addBatchClicked(url+'/batches'));
+                $('<td>').html(data[i].fruit_name).appendTo(tr);
+                $('<td>').html(data[i].month).appendTo(tr);
+                $('<td>').html(data[i].amount).appendTo(tr);
+                $('<td>').html(data[i].storage_date).appendTo(tr);
+                $('<td>').html(data[i].region).appendTo(tr);
+                $('<td>').html(data[i].ripeness).appendTo(tr);
+            }
+        });
+    }
+    function updateSelects() {
+        console.log('-----fillSelects-----')
+        fillSelect('/regions', 'selectRegion');
+        fillSelect('/fruit', 'selectFruitName');
+    }
+    function fillSelect(appendUrl, selectId) {
+        $.getJSON(url + appendUrl).then(data => {
+            console.log(`Fill ${selectId} with =>` + JSON.stringify(data));
+
+            const select = $('#' + selectId);
+            for (let i in data) {
+                $('<option>').html(data[i].name).val(data[i].name).appendTo(select);
+            }
+
+        });
+    }
+
+    
+
+
+    
             
     function addBatchClicked(url) {
         const inputFruitName = document.getElementById('txtFruitName').value;
