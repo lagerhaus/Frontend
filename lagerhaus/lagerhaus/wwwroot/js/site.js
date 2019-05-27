@@ -19,7 +19,7 @@
         }
     });
 
-    $('#btnAddBatch').on('click', event => addBatchClicked(url));
+    $('#btnAddBatch').on('click', event => addBatchClicked(url+'/batches'));
             
     function addBatchClicked(url) {
         const inputFruitName = document.getElementById('txtFruitName').value;
@@ -34,7 +34,7 @@
         }, function (result, status) {
             const element = document.getElementById('txtStatus');
             element.value = status;
-            console.log(inputAmount);
+            console.log(inputFruitName);
             element.backgroundColor = 'red';
         });
         console.log(inputAmount);
