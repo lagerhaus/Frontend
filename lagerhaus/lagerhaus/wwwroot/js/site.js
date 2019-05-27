@@ -4,6 +4,7 @@
     $('#btnAddBatch').on('click', event => addBatchClicked(url + '/batches'));
     updateBatchesTable();
     updateSelects();
+    initializeTabButtons();
 
     function updateBatchesTable() {
         $.getJSON(url + '/batches').then(data => {
@@ -16,6 +17,7 @@
                 $('#tblBatches').append(tr);
 
                 $('<td>').html(data[i].fruit_name).appendTo(tr);
+                $('<td>').html(data[i].year).appendTo(tr);
                 $('<td>').html(data[i].month).appendTo(tr);
                 $('<td>').html(data[i].amount).appendTo(tr);
                 $('<td>').html(data[i].storage_date).appendTo(tr);
@@ -41,7 +43,57 @@
 
         });
     }
+    
 
+
+    function initializeTabButtons() {
+        $('#btnBatches').on('click', event => openTableInTab('Batches'));
+        $('#btnFruits').on('click', event => openTableInTab('Fruits'));
+        $('#btnRegions').on('click', event => openTableInTab('Regions'));
+        $('#btnWeather').on('click', event => openTableInTab('Weather'));
+
+        $('#btnBatchesAddTab').on('click', event => openAddingInTab('BatchesAdd'));
+        $('#btnFruitsAddTab').on('click', event => openAddingInTab('FruitsAdd'));
+        $('#btnRegionsAddTab').on('click', event => openAddingInTab('RegionsAdd'));
+        $('#btnWeatherAddTab').on('click', event => openAddingInTab('WeatherAdd'));
+
+        $('#btnBatches').click();
+        $('#btnBatchesAddTab').click();
+    }
+
+    function openTableInTab(name) {
+        console.log('openTableInTab with ' + name);
+
+        var i, tabcontent, tablinks;
+        tabcontent = $('.tabcontent');
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = 'none';
+        }
+        tablinks = $('.tablinks');
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(' active', '');
+        }
+        $('#' + name).css('display','block');
+    } 
+    function openAddingInTab(name) {
+        console.log('openAddingInTab with ' + name);
+        var i, tabcontent, tablinks;
+        
+        tabcontent = $('.tabcontentAdd');
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = 'none';
+        }
+        
+        tablinks = $('.tablinksAdd');
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(' active', '');
+        }
+        $('#' + name).css('display', 'block');
+    } 
+
+
+    
+            
     function addBatchClicked(url) {
         const inputFruitName = document.getElementById('txtFruitName').value;
         const inputYear = document.getElementById('txtYear').value;
