@@ -7,16 +7,17 @@ body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
+
 html {
-    padding:0;
-    margin:0;
+    padding: 0;
+    margin: 0;
 }
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
     padding: 0;
-    margin:0;
+    margin: 0;
     width: 100%;
 }
 
@@ -52,27 +53,40 @@ html {
     font-weight: bold;
     width: 100%;
     font-size: 45px;
-    padding: 0px 0px 6px 70px;
+    padding: 0px 0px 0px 70px;
+    margin: 0;
 }
+
 #body {
-    margin: 0px 70px 0px 70px;
+    margin: 0px 0px 0px 0px;
 }
 
 .two-col {
-    overflow: hidden; 
+    overflow: hidden;
 }
 
-#txtWeatherYear{
-    margin-right: 20px;
+#hrGreen {
+    border: solid 1px #009036;
 }
-#txtWeatherMonth {
-    margin-right: 20px;
+
+#btnBatches, #btnFruits, #btnRegions #btnWeather {
+    
 }
+
+#Batches, #Fruits, #Regions, #Weather {
+    margin: 10px 0px 0px 0px;
+    padding: 0px 70px 0px 70px;
+}
+
+
 /* Style the Show tab */
 .tab {
     overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    color: #ffed00;
+    background-color: #009036;
+    margin: 0;
+    padding: 0px 60px 0px 60px;
+    font-weight: bold;
 }
 
     .tab button {
@@ -81,12 +95,15 @@ html {
         border: none;
         outline: none;
         cursor: pointer;
-        padding: 14px 16px;
+        padding: 5px 10px 10px 10px;
         transition: 0.3s;
+        border-bottom: solid 3px #009036;
+        border-left: solid 3px #009036;
     }
 
         .tab button:hover {
-            background-color: #ddd;
+            border-bottom: solid 3px white;
+            background-color: #07974b;
         }
 
         .tab button.active {
@@ -111,4 +128,7 @@ html {
     to {
         opacity: 1;
     }
+}
+footer {
+    padding: 0px 70px 0px 70px;
 }
