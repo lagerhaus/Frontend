@@ -5,7 +5,9 @@
     $('#btnAddFruit').on('click', event => addFruitClicked(url + '/fruit'));
     $('#btnAddRegion').on('click', event => addRegionClicked(url + '/regions'));
     $('#btnAddWeather').on('click', event => addWeatherClicked(url + '/weather'));
-    updateBatchesTable();
+    $('#btnWeatherLoad').on('click', event => loadWeather());
+
+    updateTables();
     updateSelects();
     initializeTabButtons();
 
@@ -101,8 +103,9 @@
 
     function updateSelects() {
         console.log('-----fillSelects-----')
-        fillSelect('/regions', 'selectRegion');
-        fillSelect('/fruit', 'selectFruitName');
+        fillSelect('/regions', 'selectFruitName_batch');
+        fillSelect('/fruit', 'selectRegion_batch');
+        fillSelect('/regions', 'selectedRegion_weather');
     }
     function fillSelect(appendUrl, selectId) {
         $.getJSON(url + appendUrl).then(data => {
