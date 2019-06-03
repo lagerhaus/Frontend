@@ -18,21 +18,15 @@
     }
 
     function updateBatchesTable() {
-        const tbody = $("#tblBatchesBody");
-        while (tbody.firstChild) {
-            tbody.removeChild(tbody.firstChild);
-        }
-
-
         $.getJSON(url + '/batches').then(data => {
 
             console.log('-----fill batches table with data-----');
             console.log(JSON.stringify(data));
 
-
+            let body = $('<tbody>');
             for (var i in data) {
                 let tr = $('<tr>');
-                $('#tblBatchesBody').append(tr);
+                body.append(tr);
 
                 $('<td>').html(data[i].fruit_name).appendTo(tr);
                 $('<td>').html(data[i].year).appendTo(tr);
@@ -42,58 +36,48 @@
                 $('<td>').html(data[i].region).appendTo(tr);
                 $('<td>').html(data[i].ripeness).appendTo(tr);
             }
+            $('#tblBatchesBody').replaceWith(body);
         });
     }
     function updateFruitsTable() {
-        const tbody = $("#tblFruitsBody");
-        while (tbody.firstChild) {
-            tbody.removeChild(tbody.firstChild);
-        }
 
         $.getJSON(url + '/fruit').then(data => {
 
             console.log('-----fill fruits table with data-----');
             console.log(JSON.stringify(data));
 
+            let body = $('<tbody>');
             for (var i in data) {
                 let tr = $('<tr>');
-                $('#tblFruitsBody').append(tr);
+                body.append(tr);
 
                 $('<td>').html(data[i].name).appendTo(tr);
                 $('<td>').html(data[i].ripeness_grades[0].name).appendTo(tr);
                 $('<td>').html(data[i].ripeness_grades[0].minimum_storage_span).appendTo(tr);
             }
+            $('#tblFruitsBody').replaceWith(body);
         });
     }
     function updateRegionsTable() {
-        const tbody = $("#tblRegionsBody");
-        while (tbody.firstChild) {
-            tbody.removeChild(tbody.firstChild);
-        }
-
         $.getJSON(url + '/regions').then(data => {
 
             console.log('-----fill regions table with data-----');
             console.log(JSON.stringify(data));
 
+            let body = $('<tbody>');
             for (var i in data) {
                 let tr = $('<tr>');
-                $('#tblRegionsBody').append(tr);
+                body.append(tr);
 
                 $('<td>').html(data[i].name).appendTo(tr);
                 $('<td>').html(data[i].area).appendTo(tr);
                 $('<td>').html(data[i].level).appendTo(tr);
             }
+            $('#tblRegionsBody').replaceWith(body);
         });
     }
 
     function loadWeather() {
-        const tbody = $("#tblWeatherBody");
-        while (tbody.firstChild) {
-            tbody.removeChild(tbody.firstChild);
-        }
-
-
         const year = $('#txtWeatherYear').val();
         const month = $('#txtWeatherMonth').val();
 
@@ -107,10 +91,11 @@
             console.log(JSON.stringify(data));
 
             console.log(data.length);
+            let body = $('<tbody>');
             for (var i in data) {
                 console.log(data[i])
                 let tr = $('<tr>');
-                $('#tblWeatherBody').append(tr);
+                body.append(tr);
 
                 $('<td>').html(data[i].year).appendTo(tr);
                 $('<td>').html(data[i].month).appendTo(tr);
@@ -118,6 +103,7 @@
                 $('<td>').html(data[i].rainy_days).appendTo(tr);
                 $('<td>').html(data[i].sunny_days).appendTo(tr);
             }
+            $('#tblWeatherBody').replaceWith(body);
         });
     }
 
