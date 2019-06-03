@@ -5,7 +5,7 @@
     $('#btnAddFruit').on('click', event => addFruitClicked(url + '/fruit'));
     $('#btnAddRegion').on('click', event => addRegionClicked(url + '/regions'));
     $('#btnAddWeather').on('click', event => addWeatherClicked(url + '/weather'));
-    $('#btnWeatherLoad').on('click', event => loadWeather());
+    $('#btnWeatherLoad').on('click', event => loadWeather(url + '/weather'));
 
     updateTables();
     updateSelects();
