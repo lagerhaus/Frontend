@@ -192,7 +192,7 @@
     }
 
     function addFruitClicked(url) {
-        const inputFruitName = document.getElementById('')
+        const inputFruitName = document.getElementById('');
     }
 
     function addRegionClicked(url) {
