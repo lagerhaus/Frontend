@@ -25,42 +25,42 @@
         </table>
         <hr id="hrGreen"/>
         <h4>Add new Batch:</h4>
-        <table style="width:36%">
+        <table>
             <tr>
-                <td>fruit_name:</td>
+                <td><output class="tdLeft">fruit_name:</output></td>
                 <td>
-                    <select id="selectFruitName_batch"></select>
+                    <select id="selectFruitName_batch" class="tdRight"></select>
                 </td>
             </tr>
             <tr>
-                <td>year:</td>
-                <td><input id="txtYear_batch"></td>
+                <td><output class="tdLeft">year:</output></td>
+                <td><input id="txtYear_batch" class="tdRight"></td>
             </tr>
             <tr>
-                <td>month:</td>
-                <td><input id="txtMonth_batch"></td>
+                <td><output class="tdLeft">month:</output></td>
+                <td><input id="txtMonth_batch" class="tdRight"></td>
             </tr>
             <tr>
-                <td>amount:</td>
-                <td><input id="txtAmount_batch"></td>
+                <td><output class="tdLeft">amount:</output></td>
+                <td><input id="txtAmount_batch" class="tdRight"></td>
             </tr>
             <tr>
-                <td>storage_date:</td>
-                <td><input type="text" id="txtStorageDate_batch"></td>
+                <td><output class="tdLeft">storage_date:</output></td>
+                <td><input type="text" id="txtStorageDate_batch" class="tdRight"></td>
             </tr>
             <tr>
-                <td>region:</td>
+                <td><output class="tdLeft">region:</output></td>
                 <td>
-                    <select id="selectRegion_batch"> </select>
+                    <select id="selectRegion_batch" class="tdRight"> </select>
                 </td>
             </tr>
             <tr>
-                <td>ripeness:</td>
-                <td><input type="text" id="txtRipeness_batch"></td>
+                <td><output class="tdLeft">ripeness:</output></td>
+                <td><input type="text" id="txtRipeness_batch" class="tdRight"></td>
             </tr>
         </table>
         <br />
-        <button id="btnAddBatch" style="width:26%">Add Batch</button>
+        <button id="btnAddBatch" class="btnAdd">Add Batch</button>
     </div>
 
     <div id="Fruits" class="tabcontent">
@@ -74,20 +74,20 @@
                 <hr id="hrGreen"/>
 
         <h4>Add new Fruit:</h4>
-        <table style="width:45%">
+        <table>
             <tr>
-                <td>fruit name:</td>
-                <td><input type="text" id="txtFruitName_fruit"/></td>
+                <td><output class="tdLeft">fruit name:</output></td>
+                <td><input type="text" id="txtFruitName_fruit" class="tdRight"/></td>
             </tr>
             <tr>
-                <td>ripeness:</td>
+                <td><output class="tdLeft">ripiness:</output></td>
                 <td>
-                    <select id="selectRipeness_fruit"></select>
+                    <select id="selectRipeness_fruit" class="tdRight"></select>
                 </td>
             </tr>
         </table>
         <br />
-        <button id="btnAddFruit" style="width:26%">Add Fruit</button>
+        <button id="btnAddFruit" class="btnAdd">Add Fruit</button>
     </div>
 
     <div id="Regions" class="tabcontent">
@@ -101,22 +101,22 @@
         <hr id="hrGreen" />
 
         <h4>Add new Region:</h4>
-        <table style="width:45%">
+        <table>
             <tr>
-                <td>region name:</td>
-                <td><input type="text" id="txtRegionName_region" /></td>
+                <td><output class="tdLeft">region name:</output></td>
+                <td><input type="text" id="txtRegionName_region" class="tdRight" /></td>
             </tr>
             <tr>
-                <td>area:</td>
-                <td><input type="text" id="txtArea_region"></td>
+                <td><output class="tdLeft">area:</output></td>
+                <td><input type="text" id="txtArea_region" class="tdRight"></td>
             </tr>
             <tr>
-                <td>level:</td>
-                <td><input id="txtLevel_region"></td>
+                <td><output class="tdLeft">level:</output></td>
+                <td><input id="txtLevel_region" class="tdRight"></td>
             </tr>
         </table>
         <br />
-        <button id="btnAddRegion" style="width:26%">Add Region</button>
+        <button id="btnAddRegion" class="btnAdd">Add Region</button>
     </div>
 
     <div id="Weather" class="tabcontent">
@@ -150,31 +150,31 @@
         <hr id="hrGreen" />
 
         <h4>Add new Weather:</h4>
-        <table style="width:45%">
+        <table>
             <tr>
-                <td>year:</td>
-                <td><input type="text" id="txtYear_weather" /></td>
+                <td><output class="tdLeft">year:</output></td>
+                <td><input type="text" id="txtYear_weather" class="tdRight" /></td>
             </tr>
             <tr>
-                <td>month:</td>
-                <td><input type="text" id="txtMonth_weather"></td>
+                <td><output class="tdLeft">month:</output></td>
+                <td><input type="text" id="txtMonth_weather" class="tdRight"></td>
             </tr>
             <tr>
-                <td>region:</td>
+                <td><output class="tdLeft">region:</output></td>
                 <td>
-                    <select id="selectedRegion_weather"></select>
+                    <select id="selectedRegion_weather" class="tdRight"></select>
                 </td>
             </tr>
             <tr>
-                <td>rainy days:</td>
-                <td><input type="text" id="txtRainyDays_weather"></td>
+                <td><output class="tdLeft">rainy days:</output></td>
+                <td><input type="text" id="txtRainyDays_weather" class="tdRight"></td>
             </tr>
             <tr>
-                <td>sunny days:</td>
-                <td><input type="text" id="txtSunnyDays_weather"></td>
+                <td><output class="tdLeft">sunny days:</output></td>
+                <td><input type="text" id="txtSunnyDays_weather" class="tdRight"></td>
             </tr>
         </table>
         <br />
-        <button id="btnAddWeather" style="width:26%">Add Weather</button>
+        <button id="btnAddWeather" class="btnAdd">Add Weather</button>
     </div>
 </div>
