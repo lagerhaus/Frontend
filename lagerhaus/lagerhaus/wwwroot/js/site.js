@@ -1,11 +1,13 @@
 ﻿$(document).ready(_ => {
-    const url = 'https://f46acc4f-9fc6-448d-addb-84cee3ec619b.mock.pstmn.io';
+    const url = 'https://7b7ec3a6-e89e-4ffb-a92c-fb07245d1523.mock.pstmn.io';
     
     $('#btnAddBatch').on('click', event => addBatchClicked(url + '/batches'));
     $('#btnAddFruit').on('click', event => addFruitClicked(url + '/fruit'));
     $('#btnAddRegion').on('click', event => addRegionClicked(url + '/regions'));
     $('#btnAddWeather').on('click', event => addWeatherClicked(url + '/weather'));
-    updateBatchesTable();
+    $('#btnWeatherLoad').on('click', event => loadWeather());
+
+    updateTables();
     updateSelects();
     initializeTabButtons();
 
@@ -72,15 +74,19 @@
         
         const year = $('#txtWeatherYear').val();
         const month = $('#txtWeatherMonth').val();
-        console.log(`-----loadWeather (year: ${year},month: ${month}) -----`);
 
+        console.log(`-----loadWeather (year: ${year}, month: ${month}) -----`);
         const urlToSend = `${url}/weather/${year}/${month}`;
+
         console.log(urlToSend);
-        $.getJSON(`${url}/weather/${year}/${month}`).then(data => {
-            console.log(`-----fill weather table with data (year: ${year},month: ${month})-----`);
+
+        $.getJSON(urlToSend).then(data => {
+            console.log(`-----fill weather table with data (year: ${year}, month: ${month})-----`);
             console.log(JSON.stringify(data));
 
+            console.log(data.length);
             for (var i in data) {
+                console.log(data[i])
                 let tr = $('<tr>');
                 $('#tblWeather').append(tr);
 
@@ -92,31 +98,14 @@
             }
         });
     }
-    function updateWeatherTable() {
-        $.getJSON(url + '/weather').then(data => {
-
-            console.log('-----fill regions table with data-----');
-            console.log(JSON.stringify(data));
-
-            for (var i in data) {
-                let tr = $('<tr>');
-                $('#tblWeather').append(tr);
-
-                $('<td>').html(data[i].year).appendTo(tr);
-                $('<td>').html(data[i].month).appendTo(tr);
-                $('<td>').html(data[i].region).appendTo(tr);
-                $('<td>').html(data[i].level).appendTo(tr);
-                $('<td>').html(data[i].level).appendTo(tr);
-            }
-        });
-    }
 
 
 
     function updateSelects() {
         console.log('-----fillSelects-----')
-        fillSelect('/regions', 'selectRegion');
-        fillSelect('/fruit', 'selectFruitName');
+        fillSelect('/regions', 'selectFruitName_batch');
+        fillSelect('/fruit', 'selectRegion_batch');
+        fillSelect('/regions', 'selectedRegion_weather');
     }
     function fillSelect(appendUrl, selectId) {
         $.getJSON(url + appendUrl).then(data => {
@@ -140,7 +129,6 @@
         
         $('#btnBatches').click();
     }
-
     function openTableInTab(name) {
         console.log('openTableInTab with ' + name);
 
