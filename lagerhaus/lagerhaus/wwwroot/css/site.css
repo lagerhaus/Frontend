@@ -4,8 +4,9 @@ body {
     font-family: Calibri;
     padding: 0;
     margin: 0;
-    padding-top: 50px;
-    padding-bottom: 20px;
+    /*padding-top: 50px;*/
+    padding-bottom: 50px;
+    
 }
 
 html {
@@ -78,6 +79,18 @@ html {
     padding: 0px 70px 0px 70px;
 }
 
+.addButtons {
+    background-color: #009036;
+    border: none;
+    color: #ffed00;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    border-radius: 3px;
+}
+
 
 /* Style the Show tab */
 .tab {
@@ -113,7 +126,7 @@ html {
 .tabcontent {
     display: none;
     padding: 6px 12px;
-    border: 1px solid #ccc;
+    border: none;
     border-top: none;
     animation: fadeEffect 1s;
 }
@@ -131,4 +144,15 @@ html {
 }
 footer {
     padding: 0px 70px 0px 70px;
+}
+
+.tblBatchesHeader tbody {
+    display: block;
+    overflow: auto;
+    height: 200px;
+    width: 100%;
+}
+
+.tblBatchesHeader tr {
+    display: block;
 }

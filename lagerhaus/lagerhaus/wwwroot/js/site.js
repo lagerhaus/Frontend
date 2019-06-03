@@ -18,14 +18,20 @@
     }
 
     function updateBatchesTable() {
+        const tbody = $("#tblBatchesBody");
+        while (tbody.firstChild) {
+            tbody.removeChild(tbody.firstChild);
+        }
+
         $.getJSON(url + '/batches').then(data => {
 
             console.log('-----fill batches table with data-----');
             console.log(JSON.stringify(data));
 
+
             for (var i in data) {
                 let tr = $('<tr>');
-                $('#tblBatches').append(tr);
+                $('#tblBatchesBody').append(tr);
 
                 $('<td>').html(data[i].fruit_name).appendTo(tr);
                 $('<td>').html(data[i].year).appendTo(tr);
@@ -103,10 +109,10 @@
 
     function updateSelects() {
         console.log('-----fillSelects-----')
-        fillSelect('/regions', 'selectFruitName_batch');
-        fillSelect('/fruit', 'selectRegion_batch');
+        fillSelect('/regions', 'selectRegion_batch');
+        fillSelect('/fruit', 'selectFruitName_batch');
         fillSelect('/regions', 'selectedRegion_weather');
-    }
+    } 
     function fillSelect(appendUrl, selectId) {
         $.getJSON(url + appendUrl).then(data => {
             console.log(`Fill ${selectId} with =>` + JSON.stringify(data));
