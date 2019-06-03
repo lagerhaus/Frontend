@@ -1,5 +1,5 @@
 ﻿$(document).ready(_ => {
-    const url = 'https://7b7ec3a6-e89e-4ffb-a92c-fb07245d1523.mock.pstmn.io';
+    const url = 'https://b52a9c67-9279-47a2-b5c4-c2fabb4a9e86.mock.pstmn.io';
     
     $('#btnAddBatch').on('click', event => addBatchClicked(url + '/batches'));
     $('#btnAddFruit').on('click', event => addFruitClicked(url + '/fruit'));
@@ -18,14 +18,21 @@
     }
 
     function updateBatchesTable() {
+        const tbody = $("#tblBatchesBody");
+        while (tbody.firstChild) {
+            tbody.removeChild(tbody.firstChild);
+        }
+
+
         $.getJSON(url + '/batches').then(data => {
 
             console.log('-----fill batches table with data-----');
             console.log(JSON.stringify(data));
 
+
             for (var i in data) {
                 let tr = $('<tr>');
-                $('#tblBatches').append(tr);
+                $('#tblBatchesBody').append(tr);
 
                 $('<td>').html(data[i].fruit_name).appendTo(tr);
                 $('<td>').html(data[i].year).appendTo(tr);
@@ -38,6 +45,11 @@
         });
     }
     function updateFruitsTable() {
+        const tbody = $("#tblFruitsBody");
+        while (tbody.firstChild) {
+            tbody.removeChild(tbody.firstChild);
+        }
+
         $.getJSON(url + '/fruit').then(data => {
 
             console.log('-----fill fruits table with data-----');
@@ -45,7 +57,7 @@
 
             for (var i in data) {
                 let tr = $('<tr>');
-                $('#tblFruits').append(tr);
+                $('#tblFruitsBody').append(tr);
 
                 $('<td>').html(data[i].name).appendTo(tr);
                 $('<td>').html(data[i].ripeness_grades[0].name).appendTo(tr);
@@ -54,6 +66,11 @@
         });
     }
     function updateRegionsTable() {
+        const tbody = $("#tblRegionsBody");
+        while (tbody.firstChild) {
+            tbody.removeChild(tbody.firstChild);
+        }
+
         $.getJSON(url + '/regions').then(data => {
 
             console.log('-----fill regions table with data-----');
@@ -61,7 +78,7 @@
 
             for (var i in data) {
                 let tr = $('<tr>');
-                $('#tblRegions').append(tr);
+                $('#tblRegionsBody').append(tr);
 
                 $('<td>').html(data[i].name).appendTo(tr);
                 $('<td>').html(data[i].area).appendTo(tr);
@@ -71,7 +88,12 @@
     }
 
     function loadWeather() {
-        
+        const tbody = $("#tblWeatherBody");
+        while (tbody.firstChild) {
+            tbody.removeChild(tbody.firstChild);
+        }
+
+
         const year = $('#txtWeatherYear').val();
         const month = $('#txtWeatherMonth').val();
 
@@ -88,7 +110,7 @@
             for (var i in data) {
                 console.log(data[i])
                 let tr = $('<tr>');
-                $('#tblWeather').append(tr);
+                $('#tblWeatherBody').append(tr);
 
                 $('<td>').html(data[i].year).appendTo(tr);
                 $('<td>').html(data[i].month).appendTo(tr);
@@ -104,9 +126,9 @@
     function updateSelects() {
         console.log('-----fillSelects-----')
         fillSelect('/regions', 'selectRegion_batch');
-        fillSelect('/fruit', 'selectFruitName_batch'); 
-        fillSelect('/regions', 'selectRegion_weather');
-    }
+        fillSelect('/fruit', 'selectFruitName_batch');
+        fillSelect('/regions', 'selectedRegion_weather');
+    } 
     function fillSelect(appendUrl, selectId) {
         $.getJSON(url + appendUrl).then(data => {
             console.log(`Fill ${selectId} with =>` + JSON.stringify(data));

@@ -13,15 +13,17 @@
     <!-- Tab content -->
     <div id="Batches" class="tabcontent">
         <table style="width:100%" id="tblBatches">
-            <tr id="columnNames" style="border-bottom:solid 2px #009036">
-                <th>fruitname</th>
-                <th>year</th>
-                <th>month</th>
-                <th>amount</th>
-                <th>storage_date</th>
-                <th>region</th>
-                <th>ripiness</th>
+            <tr id="columnNames" style="border-bottom:solid; border-color:#009036">
+                <th>Fruit Name</th>
+                <th>Year</th>
+                <th>Month</th>
+                <th>Amount</th>
+                <th>Storage Date</th>
+                <th>Region</th>
+                <th>Ripiness</th>
             </tr>
+            <tbody id="tblBatchesBody">
+            </tbody>
         </table>
         <hr id="hrGreen"/>
         <h4>Add new Batch:</h4>
@@ -72,6 +74,7 @@
                 <th>Ripeness Grade</th>
                 <th>Minimum Storage Span</th>
             </tr>
+            <tbody id="tblFruitsBody"></tbody>
         </table>
                 <hr id="hrGreen"/>
 
@@ -101,6 +104,7 @@
                 <th>Area</th>
                 <th>Level</th>
             </tr>
+            <tbody id="tblRegionsBody"></tbody>
         </table>
         <hr id="hrGreen" />
 
@@ -150,6 +154,7 @@
                 <th>Rainy Days</th>
                 <th>Sunny Days</th>
             </tr>
+            <tbody id="tblWeatherBody"></tbody>
         </table>
         <hr id="hrGreen" />
 
