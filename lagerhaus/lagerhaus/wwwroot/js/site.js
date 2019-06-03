@@ -188,11 +188,21 @@
             console.log(inputFruitName);
         });
         console.log(inputAmount);
+        updateTables();
+        updateSelects();
         return null;
     }
 
     function addFruitClicked(url) {
-        const inputFruitName = document.getElementById('');
+        const inputFruitName = document.getElementById('txtFruitName_fruit');
+        const inputRipeness = document.getElementById('txtRipeness_fruit');
+        const inputMinimumStorage = document.getElementById('txtMinimumStorage_fruit');
+        console.log(inputFruitName);
+        $.post(url, {
+            name: inputFruitName, ripeness_grades: { name: inputRipeness, minimum_storage_span: inputMinimumStorage }
+        }, function (result, status) {
+            console.log(inputMinimumStorage);
+        });
     }
 
     function addRegionClicked(url) {
