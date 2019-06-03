@@ -23,6 +23,44 @@
                 <th>ripiness</th>
             </tr>
         </table>
+
+        <h4>Add new Batch:</h4>
+        <table style="width:36%">
+            <tr>
+                <td>fruit_name:</td>
+                <td>
+                    <select id="selectFruitName_batch"></select>
+                </td>
+            </tr>
+            <tr>
+                <td>year:</td>
+                <td><input id="txtYear_batch"></td>
+            </tr>
+            <tr>
+                <td>month:</td>
+                <td><input id="txtMonth_batch"></td>
+            </tr>
+            <tr>
+                <td>amount:</td>
+                <td><input id="txtAmount_batch"></td>
+            </tr>
+            <tr>
+                <td>storage_date:</td>
+                <td><input type="text" id="txtStorageDate_batch"></td>
+            </tr>
+            <tr>
+                <td>region:</td>
+                <td>
+                    <select id="selectRegion_batch"> </select>
+                </td>
+            </tr>
+            <tr>
+                <td>ripeness:</td>
+                <td><input type="text" id="txtRipeness_batch"></td>
+            </tr>
+        </table>
+        <br />
+        <button id="btnAddBatch" style="width:26%">Add Batch</button>
     </div>
 
     <div id="Fruits" class="tabcontent">
@@ -33,6 +71,22 @@
                 <th>Minimum Storage Span</th>
             </tr>
         </table>
+
+        <h4>Add new Fruit:</h4>
+        <table style="width:45%">
+            <tr>
+                <td>fruit name:</td>
+                <td><input type="text" id="txtFruitName_fruit"/></td>
+            </tr>
+            <tr>
+                <td>ripeness:</td>
+                <td>
+                    <select id="selectRipeness_fruit"></select>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <button id="btnAddFruit" style="width:26%">Add Fruit</button>
     </div>
 
     <div id="Regions" class="tabcontent">
@@ -43,6 +97,24 @@
                 <th>Level</th>
             </tr>
         </table>
+
+        <h4>Add new Region:</h4>
+        <table style="width:45%">
+            <tr>
+                <td>region name:</td>
+                <td><input type="text" id="txtRegionName_region" /></td>
+            </tr>
+            <tr>
+                <td>area:</td>
+                <td><input type="text" id="txtArea_region"></td>
+            </tr>
+            <tr>
+                <td>level:</td>
+                <td><input id="txtLevel_region"></td>
+            </tr>
+        </table>
+        <br />
+        <button id="btnAddRegion" style="width:26%">Add Region</button>
     </div>
 
     <div id="Weather" class="tabcontent">
@@ -55,7 +127,7 @@
                 </td>
                 <td>
                     Month:
-                    <input type="number" id="txtWeatherMonth" placeholder="6"/>
+                    <input type="number" id="txtWeatherMonth" placeholder="6" />
                 </td>
                 <td>
                     <button id="btnWeatherLoad">Load Weather</button>
@@ -73,85 +145,33 @@
                 <th>Sunny Days</th>
             </tr>
         </table>
-    </div>
 
-
-    <br />
-    <hr />
-
-    <h4>Add new Batch:</h4>
-    <table style="width:36%">
-        <tr>
-            <td>fruit_name:</td>
-            <td>
-                <select id="selectFruitName_batch"></select>
-            </td>
-        </tr>
-        <tr>
-            <td>year:</td>
-            <td><input type="text" id="txtYear_batch"></td>
-        </tr>
-        <tr>
-            <td>month:</td>
-            <td><input type="text" id="txtMonth_batch"></td>
-        </tr>
-        <tr>
-            <td>amount:</td>
-            <td><input type="text" id="txtAmount_batch"></td>
-        </tr>
-        <tr>
-            <td>storage_date:</td>
-            <td><input type="text" id="txtStorageDate_batch"></td>
-        </tr>
-        <tr>
-            <td>region:</td>
-            <td>
-                <select id="selectRegion_batch"> </select>
-            </td>
-        </tr>
-        <tr>
-            <td>ripeness:</td>
-            <td><input type="text" id="txtRipeness_batch"></td>
-        </tr>
-    </table>
-    <br />
-    <button id="btnAddBatch" style="width:26%">Add Batch</button>
-
-    <div id="Regions" class="tabcontent">
-        <h4>Add new Region:</h4>
-        <table style="width:45%">
-            <tr>
-                <td>fruit name:</td>
-                <td><input type="text" /></td>
-            </tr>
-            <tr>
-                <td>ripeness:</td>
-                <td><input type="text" id="txtRipeness" placeholder="Grade A"></td>
-            </tr>
-        </table>
-        <br />
-        <button id="btnAddRegion" style="width:26%">Add Region</button>
-    </div>
-
-    <div id="Weather" class="tabcontent">
         <h4>Add new Weather:</h4>
         <table style="width:45%">
             <tr>
-                <td>fruit name:</td>
-                <td><input type="text" /></td>
+                <td>year:</td>
+                <td><input type="text" id="txtYear_weather" /></td>
             </tr>
             <tr>
-                <td>ripeness:</td>
-                <td><input type="text" id="txtRipeness" placeholder="Grade A"></td>
+                <td>month:</td>
+                <td><input type="text" id="txtMonth_weather"></td>
+            </tr>
+            <tr>
+                <td>region:</td>
+                <td>
+                    <select id="selectedRegion_weather"></select>
+                </td>
+            </tr>
+            <tr>
+                <td>rainy days:</td>
+                <td><input type="text" id="txtRainyDays_weather"></td>
+            </tr>
+            <tr>
+                <td>sunny days:</td>
+                <td><input type="text" id="txtSunnyDays_weather"></td>
             </tr>
         </table>
         <br />
         <button id="btnAddWeather" style="width:26%">Add Weather</button>
     </div>
-
-    <br />
-
-    <hr />
-
-    
 </div>
