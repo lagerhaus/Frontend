@@ -182,18 +182,57 @@
             console.log(inputFruitName);
         });
         console.log(inputAmount);
+        updateTables();
+        updateSelects();
         return null;
     }
 
     function addFruitClicked(url) {
-        const inputFruitName = document.getElementById('');
+        const inputFruitName = document.getElementById('txtFruitName_fruit').value;
+        const inputRipeness = document.getElementById('txtRipenessName_fruit').value;
+        const inputMinimumStorage = document.getElementById('txtMinimumStorage_fruit').value;
+        console.log(inputFruitName);
+        $.post(url, {
+            name: inputFruitName, ripeness_grades: { name: inputRipeness, minimum_storage_span: inputMinimumStorage }
+        }, function (result, status) {
+            console.log(inputMinimumStorage);
+            });
+        console.log(inputRipeness);
+        updateTables();
+        updateSelects();
     }
 
     function addRegionClicked(url) {
+        const inputRegionName = document.getElementById('txtRegionName_region').value;
+        const inputArea = document.getElementById('txtArea_region').value;
+        const inputLevel = document.getElementById('txtLevel_region').value;
+        console.log(inputLevel);
+        $.post(url, {
+            name: inputRegionName, area: inputArea, level: inputLevel
+        }, function(result, status){
+            console.log(inputArea)
+            });
+        console.log(inputRegionName)
+        updateTables();
+        updateSelects();
         return null;
     }
 
     function addWeatherClicked(url) {
+        const inputYear = document.getElementById('txtYear_weather').value;
+        const inputMonth = document.getElementById('txtMonth_weather').value;
+        const inputRegion = document.getElementById('selectRegion_weather').value;
+        const inputRainyDays = document.getElementById('txtRainyDays_weather').value;
+        const inputSunnyDays = document.getElementById('txtSunnyDays_weather').value;
+        console.log(inputYear);
+        $.post(url, {
+            year: inputYear, month: inputMonth, region: inputRegion, rainy_days: inputRainyDays, sunny_days: inputSunnyDays
+        }, function (result, status) {
+            console.log(inputRainyDays)
+        });
+        console.log(inputRegion)
+        updateTables();
+        updateSelects();
         return null;
     }
 });

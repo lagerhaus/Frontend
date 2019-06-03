@@ -4,9 +4,7 @@ body {
     font-family: Calibri;
     padding: 0;
     margin: 0;
-    /*padding-top: 50px;*/
     padding-bottom: 50px;
-    
 }
 
 html {
@@ -112,6 +110,7 @@ html {
         transition: 0.3s;
         border-bottom: solid 3px #009036;
         border-left: solid 3px #009036;
+        font-size:15px
     }
 
         .tab button:hover {
@@ -126,9 +125,27 @@ html {
 .tabcontent {
     display: none;
     padding: 6px 12px;
-    border: none;
+    border:none;
     border-top: none;
     animation: fadeEffect 1s;
+}
+
+.tdLeft {
+    width: 130px;
+}
+.tdRight{
+    width: 200px;
+}
+.btnAdd {
+    width: 330px;
+    background-color: #009036;
+    border: none;
+    color: #ffed00;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
 }
 
 
