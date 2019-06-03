@@ -2,11 +2,10 @@
     const url = 'https://f46acc4f-9fc6-448d-addb-84cee3ec619b.mock.pstmn.io';
     
     $('#btnAddBatch').on('click', event => addBatchClicked(url + '/batches'));
-    $('#btnWeatherLoad').on('click', event => loadWeather());
-    
-    
-
-    updateTables();
+    $('#btnAddFruit').on('click', event => addFruitClicked(url + '/fruit'));
+    $('#btnAddRegion').on('click', event => addRegionClicked(url + '/regions'));
+    $('#btnAddWeather').on('click', event => addWeatherClicked(url + '/weather'));
+    updateBatchesTable();
     updateSelects();
     initializeTabButtons();
 
@@ -138,14 +137,8 @@
         $('#btnFruits').on('click', event => openTableInTab('Fruits'));
         $('#btnRegions').on('click', event => openTableInTab('Regions'));
         $('#btnWeather').on('click', event => openTableInTab('Weather'));
-
-        $('#btnBatchesAddTab').on('click', event => openAddingInTab('BatchesAdd'));
-        $('#btnFruitsAddTab').on('click', event => openAddingInTab('FruitsAdd'));
-        $('#btnRegionsAddTab').on('click', event => openAddingInTab('RegionsAdd'));
-        $('#btnWeatherAddTab').on('click', event => openAddingInTab('WeatherAdd'));
-
+        
         $('#btnBatches').click();
-        $('#btnBatchesAddTab').click();
     }
 
     function openTableInTab(name) {
@@ -179,26 +172,34 @@
     } 
 
 
-    
             
     function addBatchClicked(url) {
-        const inputFruitName = document.getElementById('selectFruitName').value;
-        const inputYear = document.getElementById('txtYear').value;
-        const inputMonth = document.getElementById('txtMonth').value;
-        const inputAmount = document.getElementById('txtAmount').value;
-        const inputStorageDate = document.getElementById('txtStorageDate').value;
-        const inputRegion = document.getElementById('selectRegion').value;
-        const inputRipeness = document.getElementById('txtRipeness').value;
+        const inputFruitName = document.getElementById('selectFruitName_batch').value;
+        const inputYear = document.getElementById('txtYear_batch').value;
+        const inputMonth = document.getElementById('txtMonth_batch').value;
+        const inputAmount = document.getElementById('txtAmount_batch').value;
+        const inputStorageDate = document.getElementById('txtStorageDate_batch').value;
+        const inputRegion = document.getElementById('selectRegion_batch').value;
+        const inputRipeness = document.getElementById('txtRipeness_batch').value;
         console.log(inputRegion);
         $.post(url, {
             fruit_name: inputFruitName, year: inputYear, month: inputMonth, amount: inputAmount, storage_date: inputStorageDate, region: inputRegion, ripeness: inputRipeness
         }, function (result, status) {
-            const element = document.getElementById('txtStatus');
-            element.value = status;
             console.log(inputFruitName);
-            element.backgroundColor = 'red';
         });
         console.log(inputAmount);
+        return null;
+    }
+
+    function addFruitClicked(url) {
+        const inputFruitName = document.getElementById('');
+    }
+
+    function addRegionClicked(url) {
+        return null;
+    }
+
+    function addWeatherClicked(url) {
         return null;
     }
 });
