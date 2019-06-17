@@ -39,6 +39,7 @@
             $('#tblBatchesBody').replaceWith(body);
         });
     }
+
     function updateFruitsTable() {
 
         $.getJSON(url + '/fruit').then(data => {
@@ -58,6 +59,7 @@
             $('#tblFruitsBody').replaceWith(body);
         });
     }
+
     function updateRegionsTable() {
         $.getJSON(url + '/regions').then(data => {
 
@@ -107,13 +109,11 @@
         });
     }
 
-
-
     function updateSelects() {
         console.log('-----fillSelects-----')
         fillSelect('/regions', 'selectRegion_batch');
         fillSelect('/fruit', 'selectFruitName_batch');
-        fillSelect('/regions', 'selectedRegion_weather');
+        fillSelect('/regions', 'selectRegion_weather');
     } 
     function fillSelect(appendUrl, selectId) {
         $.getJSON(url + appendUrl).then(data => {
@@ -126,8 +126,6 @@
 
         });
     }
-    
-
 
     function initializeTabButtons() {
         $('#btnBatches').on('click', event => openTableInTab('Batches'));
@@ -166,9 +164,7 @@
         }
         $('#' + name).css('display', 'block');
     } 
-
-
-            
+    
     function addBatchClicked(url) {
         const inputFruitName = document.getElementById('selectFruitName_batch').value;
         const inputYear = document.getElementById('txtYear_batch').value;
