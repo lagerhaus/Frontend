@@ -1,6 +1,5 @@
 ﻿$(document).ready(_ => {
     const url = 'http://localhost:5001/api';
-    const mockUrl = 'https://b52a9c67-9279-47a2-b5c4-c2fabb4a9e86.mock.pstmn.io';
 
     $('#btnAddBatch').on('click', event => addBatchClicked(url + '/batches'));
     $('#btnAddFruit').on('click', event => addFruitClicked(url + '/fruit'));
@@ -43,7 +42,7 @@
 
     function updateFruitsTable() {
 
-        $.getJSON(mockUrl + '/fruit').then(data => { // TODO: implement real fruit API
+        $.getJSON(url + '/fruit').then(data => { // TODO: implement real fruit API
 
             console.log('-----fill fruits table with data-----');
             console.log(JSON.stringify(data));
@@ -113,11 +112,11 @@
     function updateSelects() {
         console.log('-----fillSelects-----')
         fillSelect('/regions', 'selectRegion_batch');
-        fillSelect('/fruit', 'selectFruitName_batch', true);
+        fillSelect('/fruit', 'selectFruitName_batch');
         fillSelect('/regions', 'selectRegion_weather');
     }
-    function fillSelect(appendUrl, selectId, forceUseMockServer = false) {
-        $.getJSON((forceUseMockServer ? mockUrl : url) + appendUrl).then(data => {
+    function fillSelect(appendUrl, selectId) {
+        $.getJSON(url + appendUrl).then(data => {
             console.log(`Fill ${selectId} with =>` + JSON.stringify(data));
 
             const select = $('#' + selectId);
@@ -198,7 +197,9 @@
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify({
-                name: inputFruitName, ripeness_grades: { name: inputRipeness, minimum_storage_span: inputMinimumStorage }
+                name: inputFruitName, ripeness_grades: [
+                    { name: inputRipeness, minimum_storage_span: inputMinimumStorage }
+                ]
             }),
             success: function (result, status) {
                 console.log(inputMinimumStorage);
