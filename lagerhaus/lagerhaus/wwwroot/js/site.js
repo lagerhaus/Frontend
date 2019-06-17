@@ -1,6 +1,7 @@
 ﻿$(document).ready(_ => {
-    const url = 'https://b52a9c67-9279-47a2-b5c4-c2fabb4a9e86.mock.pstmn.io';
-    
+    const url = 'http://localhost:5001/api';
+    const mockUrl = 'https://b52a9c67-9279-47a2-b5c4-c2fabb4a9e86.mock.pstmn.io';
+
     $('#btnAddBatch').on('click', event => addBatchClicked(url + '/batches'));
     $('#btnAddFruit').on('click', event => addFruitClicked(url + '/fruit'));
     $('#btnAddRegion').on('click', event => addRegionClicked(url + '/regions'));
@@ -36,13 +37,13 @@
                 $('<td>').html(data[i].region).appendTo(tr);
                 $('<td>').html(data[i].ripeness).appendTo(tr);
             }
-            $('#tblBatchesBody').replaceWith(body);
+            $('#tblBatches tbody:nth-child(2)').replaceWith(body);
         });
     }
 
     function updateFruitsTable() {
 
-        $.getJSON(url + '/fruit').then(data => {
+        $.getJSON(mockUrl + '/fruit').then(data => { // TODO: implement real fruit API
 
             console.log('-----fill fruits table with data-----');
             console.log(JSON.stringify(data));
@@ -56,7 +57,7 @@
                 $('<td>').html(data[i].ripeness_grades[0].name).appendTo(tr);
                 $('<td>').html(data[i].ripeness_grades[0].minimum_storage_span).appendTo(tr);
             }
-            $('#tblFruitsBody').replaceWith(body);
+            $('#tblFruits tbody:nth-child(2)').replaceWith(body);
         });
     }
 
@@ -75,7 +76,7 @@
                 $('<td>').html(data[i].area).appendTo(tr);
                 $('<td>').html(data[i].level).appendTo(tr);
             }
-            $('#tblRegionsBody').replaceWith(body);
+            $('#tblRegions tbody:nth-child(2)').replaceWith(body);
         });
     }
 
@@ -105,18 +106,18 @@
                 $('<td>').html(data[i].rainy_days).appendTo(tr);
                 $('<td>').html(data[i].sunny_days).appendTo(tr);
             }
-            $('#tblWeatherBody').replaceWith(body);
+            $('#tblWeather tbody:nth-child(2)').replaceWith(body);
         });
     }
 
     function updateSelects() {
         console.log('-----fillSelects-----')
         fillSelect('/regions', 'selectRegion_batch');
-        fillSelect('/fruit', 'selectFruitName_batch');
+        fillSelect('/fruit', 'selectFruitName_batch', true);
         fillSelect('/regions', 'selectRegion_weather');
-    } 
-    function fillSelect(appendUrl, selectId) {
-        $.getJSON(url + appendUrl).then(data => {
+    }
+    function fillSelect(appendUrl, selectId, forceUseMockServer = false) {
+        $.getJSON((forceUseMockServer ? mockUrl : url) + appendUrl).then(data => {
             console.log(`Fill ${selectId} with =>` + JSON.stringify(data));
 
             const select = $('#' + selectId);
@@ -132,7 +133,7 @@
         $('#btnFruits').on('click', event => openTableInTab('Fruits'));
         $('#btnRegions').on('click', event => openTableInTab('Regions'));
         $('#btnWeather').on('click', event => openTableInTab('Weather'));
-        
+
         $('#btnBatches').click();
     }
     function openTableInTab(name) {
@@ -147,24 +148,24 @@
         for (i = 0; i < tablinks.length; i++) {
             tablinks[i].className = tablinks[i].className.replace(' active', '');
         }
-        $('#' + name).css('display','block');
-    } 
+        $('#' + name).css('display', 'block');
+    }
     function openAddingInTab(name) {
         console.log('openAddingInTab with ' + name);
         var i, tabcontent, tablinks;
-        
+
         tabcontent = $('.tabcontentAdd');
         for (i = 0; i < tabcontent.length; i++) {
             tabcontent[i].style.display = 'none';
         }
-        
+
         tablinks = $('.tablinksAdd');
         for (i = 0; i < tablinks.length; i++) {
             tablinks[i].className = tablinks[i].className.replace(' active', '');
         }
         $('#' + name).css('display', 'block');
-    } 
-    
+    }
+
     function addBatchClicked(url) {
         const inputFruitName = document.getElementById('selectFruitName_batch').value;
         const inputYear = document.getElementById('txtYear_batch').value;
@@ -174,14 +175,17 @@
         const inputRegion = document.getElementById('selectRegion_batch').value;
         const inputRipeness = document.getElementById('txtRipeness_batch').value;
         console.log(inputRegion);
-        $.post(url, {
-            fruit_name: inputFruitName, year: inputYear, month: inputMonth, amount: inputAmount, storage_date: inputStorageDate, region: inputRegion, ripeness: inputRipeness
-        }, function (result, status) {
-            console.log(inputFruitName);
+        $.ajax(url, {
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ fruit_name: inputFruitName, year: inputYear, month: inputMonth, amount: inputAmount, storage_date: inputStorageDate, region: inputRegion, ripeness: inputRipeness }),
+            success: function (result, status) {
+                console.log(inputFruitName);
+                updateTables();
+                updateSelects();
+            }
         });
         console.log(inputAmount);
-        updateTables();
-        updateSelects();
         return null;
     }
 
@@ -190,14 +194,19 @@
         const inputRipeness = document.getElementById('txtRipenessName_fruit').value;
         const inputMinimumStorage = document.getElementById('txtMinimumStorage_fruit').value;
         console.log(inputFruitName);
-        $.post(url, {
-            name: inputFruitName, ripeness_grades: { name: inputRipeness, minimum_storage_span: inputMinimumStorage }
-        }, function (result, status) {
-            console.log(inputMinimumStorage);
-            });
-        console.log(inputRipeness);
-        updateTables();
-        updateSelects();
+        $.ajax(url, {
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                name: inputFruitName, ripeness_grades: { name: inputRipeness, minimum_storage_span: inputMinimumStorage }
+            }),
+            success: function (result, status) {
+                console.log(inputMinimumStorage);
+                console.log(inputRipeness);
+                updateTables();
+                updateSelects();
+            }
+        });
     }
 
     function addRegionClicked(url) {
@@ -205,14 +214,17 @@
         const inputArea = document.getElementById('txtArea_region').value;
         const inputLevel = document.getElementById('txtLevel_region').value;
         console.log(inputLevel);
-        $.post(url, {
-            name: inputRegionName, area: inputArea, level: inputLevel
-        }, function(result, status){
-            console.log(inputArea)
-            });
-        console.log(inputRegionName)
-        updateTables();
-        updateSelects();
+        $.ajax(url, {
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ name: inputRegionName, area: inputArea, level: inputLevel }),
+            success: function (result, status) {
+                console.log(inputArea)
+                console.log(inputRegionName)
+                updateTables();
+                updateSelects();
+            }
+        });
         return null;
     }
 
@@ -223,14 +235,18 @@
         const inputRainyDays = document.getElementById('txtRainyDays_weather').value;
         const inputSunnyDays = document.getElementById('txtSunnyDays_weather').value;
         console.log(inputYear);
-        $.post(url, {
-            year: inputYear, month: inputMonth, region: inputRegion, rainy_days: inputRainyDays, sunny_days: inputSunnyDays
-        }, function (result, status) {
-            console.log(inputRainyDays)
+        $.ajax(url, {
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ year: inputYear, month: inputMonth, region: inputRegion, rainy_days: inputRainyDays, sunny_days: inputSunnyDays }),
+            success: function (result, status) {
+                console.log(inputRainyDays)
+                console.log(inputRegion)
+                updateTables();
+                updateSelects();
+                loadWeather();
+            }
         });
-        console.log(inputRegion)
-        updateTables();
-        updateSelects();
         return null;
     }
 });
