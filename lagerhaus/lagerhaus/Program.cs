@@ -19,11 +19,16 @@ namespace lagerhaus
             CreateWebHostBuilder(args).Build().Run();
         }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args) {
+            var url = Environment.GetEnvironmentVariable($"{ENV_VAR_PREFIX}FRONTEND_URL") ?? "http://*:5000";
+            System.Console.WriteLine($"Using URL: {url}");
+
+            return WebHost.CreateDefaultBuilder(args)
                 .ConfigureAppConfiguration((hostingContext, config) => {
                     config.AddEnvironmentVariables(ENV_VAR_PREFIX);
-                });
+                })
+                .UseStartup<Startup>()
+                .UseUrls(url);
+        }
     }
 }
