@@ -12,6 +12,8 @@ namespace lagerhaus
 {
     public class Program
     {
+        public const string ENV_VAR_PREFIX = "LHAUS_";
+
         public static void Main(string[] args)
         {
             CreateWebHostBuilder(args).Build().Run();
@@ -19,6 +21,9 @@ namespace lagerhaus
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+                .UseStartup<Startup>()
+                .ConfigureAppConfiguration((hostingContext, config) => {
+                    config.AddEnvironmentVariables(ENV_VAR_PREFIX);
+                });
     }
 }

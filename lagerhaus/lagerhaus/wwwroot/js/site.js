@@ -1,5 +1,5 @@
 ﻿$(document).ready(_ => {
-    const url = 'http://localhost:5001/api';
+    const url = LHAUS_BACKEND_URL;
 
     $('#btnAddBatch').on('click', event => addBatchClicked(url + '/batches'));
     $('#btnAddFruit').on('click', event => addFruitClicked(url + '/fruit'));
